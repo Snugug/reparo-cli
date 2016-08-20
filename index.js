@@ -1,3 +1,5 @@
+#! /usr/local/bin/node
+
 'use strict';
 
 const args = require('./lib/args');
