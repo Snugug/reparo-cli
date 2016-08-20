@@ -1,14 +1,6 @@
 import test from 'ava';
 import args from '../lib/args';
 
-test('No Token', t => {
-  return args().then(() => {
-    t.fail('Should Not Pass');
-  }).catch(e => {
-    t.is(e.message, 'GH_TOKEN not defined!');
-  });
-});
-
 test('No Slug', t => {
   process.env.GH_TOKEN = '12345';
 
