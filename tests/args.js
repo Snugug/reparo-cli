@@ -1,16 +1,6 @@
 import test from 'ava';
 import args from '../lib/args';
 
-test('No Slug', t => {
-  process.env.GH_TOKEN = '12345';
-
-  return args().then(() => {
-    t.fail('Should Not Pass');
-  }).catch(e => {
-    t.is(e.message, 'REPO_SLUG not defined!');
-  });
-});
-
 test('Bad Slug', t => {
   process.env.GH_TOKEN = '12345';
   process.env.REPO_SLUG = 'snugug';
