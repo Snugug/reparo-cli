@@ -1,0 +1,72 @@
+{
+  "name": "reparo",
+  "description": "Kick off Reparo",
+  "main": "index.js",
+  "bin": "./index.js",
+  "scripts": {
+    "pretest": "npm run lint",
+    "test": "npm run nyc",
+    "lint": "eslint index.js lib && eslint -c .eslintrc-ava.yml tests",
+    "ava": "NODE_CONFIG_DIR=../config ava | tap-diff",
+    "nyc": "nyc --all npm run ava",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Snugug/reparo-cli.git"
+  },
+  "keywords": [
+    "reparo",
+    "labels"
+  ],
+  "author": "Sam Richard <sam@snug.ug>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Snugug/reparo-cli/issues"
+  },
+  "homepage": "https://github.com/Snugug/reparo-cli#readme",
+  "nyc": {
+    "exclude": [
+      "tests/**/*",
+      "tasks/**/*",
+      "config/**/*",
+      "node_modules/**/*",
+      "index.js",
+      "Gulpfile.js"
+    ]
+  },
+  "ava": {
+    "files": [
+      "tests/**/*.js"
+    ],
+    "failFast": true,
+    "tap": true
+  },
+  "config": {
+    "ghooks": {
+      "commit-msg": "punchcard-commit-msg"
+    }
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "coveralls": "^2.11.12",
+    "eslint": "^3.3.1",
+    "eslint-config-punchcard": "^1.0.1",
+    "eslint-config-xo-space": "^0.14.0",
+    "ghooks": "^1.3.2",
+    "nyc": "^6",
+    "punchcard-commit-msg": "^1.0.0",
+    "punchcard-semantic-release": "^2.0.1",
+    "semantic-release": "^4.3.5",
+    "tap-diff": "^0.1.1"
+  },
+  "release": {
+    "analyzeCommits": "punchcard-semantic-release/analyze",
+    "generateNotes": "punchcard-semantic-release/notes"
+  },
+  "dependencies": {
+    "js-yaml": "^3.6.1",
+    "url": "^0.11.0"
+  }
+}
