@@ -66,6 +66,7 @@
     "generateNotes": "punchcard-semantic-release/notes"
   },
   "dependencies": {
+    "commander": "^2.9.0",
     "js-yaml": "^3.6.1",
     "request": "^2.74.0",
     "url": "^0.11.0"
