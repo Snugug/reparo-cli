@@ -20,6 +20,8 @@ test('Good Response', t => {
     token: '12345',
     user: 'snugug',
     repo: 'reparo-cli',
+    branch: 'master',
+    force: false,
   };
 
   return args().then((result) => {
@@ -35,6 +37,8 @@ test('Good Response, Travis Token', t => {
     token: '12345',
     user: 'snugug',
     repo: 'reparo-cli',
+    branch: 'master',
+    force: false,
   };
 
   return args().then((result) => {
