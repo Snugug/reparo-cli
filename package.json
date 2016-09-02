@@ -10,7 +10,8 @@
     "ava": "NODE_CONFIG_DIR=../config ava | tap-diff",
     "nyc": "nyc --all npm run ava",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "reparo": "node ./index.js -b master"
   },
   "repository": {
     "type": "git",
