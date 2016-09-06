@@ -12,6 +12,7 @@ program
   .option('-t, --token <token>', 'GitHub Token')
   .option('-s, --slug <user/repo>', 'GitHub Repo Token (`user/repo`)')
   .option('-b, --branch <branch>', 'Branch to deploy on')
+  .option('-u, --url', 'URL of Reparo install')
   .option('-f, --force', 'Force label generation')
   .parse(process.argv);
 
@@ -19,6 +20,7 @@ const options = {
   token: program.token,
   slug: program.slug,
   branch: program.branch,
+  url: program.url,
   force: program.force,
 };
 
