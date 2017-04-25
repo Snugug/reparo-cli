@@ -8,7 +8,7 @@ test('Bad Slug', t => {
   return args().then(() => {
     t.fail('Should Not Pass');
   }).catch(e => {
-    t.is(e.message, 'Repository Slug needs to contain user and repo name (e.g. \'snugug/reparo\'). Set to \'snugug\'');
+    t.is(e.message, 'REPO_SLUG needs to contain user and repo name (e.g. \'snugug/reparo\'). Set to \'snugug\'');
   });
 });
 
